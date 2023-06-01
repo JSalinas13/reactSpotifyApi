@@ -39,10 +39,10 @@
 } */
 
 :root {
-  --main-color: #19f442;
-  --second-color: #443b65;
+  --main-color: #65d832;
+  --second-color: #5a1a52;
   /* --target-color: rgb(255, 7, 110); */
-  --target-color: #443b65;
+  --target-color: #5a1a52;
 }
 
 /* TARJETAS */
@@ -57,6 +57,11 @@ body {
   /* background: url("background.jpg"); */
   /* overflow: hidden; */
   /* padding: 30px; */
+}
+
+h1 {
+  color: var(--second-color);
+  text-shadow: black 1px 1px 1px;
 }
 
 .card {
@@ -147,7 +152,7 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.15);
+  transform: scale(1.08);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
