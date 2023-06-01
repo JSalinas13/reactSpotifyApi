@@ -52,12 +52,47 @@ function App() {
     setArtists(data.artists.items)
   }
 
+
+
+
   const renderArtist = () => {
     return artists.map(artist => (
       <div key={artist.id}>
-        {artist.images.length ? <img width={"100px"} height={"100px"} src={artist.images[0].url} alt=''></img> : <div>No hay imagen</div>}
-        {artist.name}
-      </div>
+        <div className="card">
+          <div className="card-image" style={{
+            backgroundImage: `url("${artist.images.length ? artist.images[0].url : 'No hay imagen'}")`
+          }}>
+
+          </div>
+          <div className="card-text">
+            <span className="date">Artista</span>
+            <h2>{artist.name}</h2>
+            <p>Popularidad: {artist.popularity}</p>
+          </div>
+          <div className="card-stats">
+            <div className="stat">
+              <div className="value"></div>
+              <div className="type"></div>
+            </div>
+            <div className="stat border">
+              <div className="value"> {artist.followers.total}</div>
+              <div className="type">Seguidores</div>
+            </div>
+            <div className="stat">
+              <div className="value"></div>
+              <div className="type"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        {/*  */}
+        {/* {artist.images.length ? <img width={"100px"} height={"100px"} src={artist.images[0].url} alt=''></img> : <div>No hay imagen</div>}
+        {artist.name} */}
+      </div >
     ))
   }
 
