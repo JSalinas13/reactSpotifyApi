@@ -57,6 +57,7 @@ function App() {
 
   const renderArtist = () => {
     return artists.map(artist => (
+
       <div key={artist.id}>
         <div className="card">
           <div className="card-image" style={{

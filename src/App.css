@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -36,32 +36,38 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* TARJETAS */
 
+body {
+  /* width: 100vw;
+  height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: url("background.jpg"); */
+  /* overflow: hidden; */
+  /* padding: 30px; */
+}
+
 .card {
+  width: 300px;
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 210px 210px 80px;
   grid-template-areas: "image" "text" "stats";
+
   border-radius: 18px;
   background: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   font-family: roboto;
   text-align: center;
-}
 
-.card-image {
-  grid-area: image;
-}
 
-.card-text {
-  grid-area: text;
-}
-
-.card-stats {
-  grid-area: stats;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 30px;
 }
 
 .card-image {
@@ -104,10 +110,73 @@
 }
 
 .card-stats .stat {
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: white;
-  padding: 10px;
+}
+
+.card-stats .border {
+  border-left: 1px solid rgb(172, 26, 87);
+  border-right: 1px solid rgb(172, 26, 87);
+}
+
+.card-stats .value {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.card-stats .value sup {
+  font-size: 12px;
+}
+
+.card-stats .type {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/*card2*/
+.card-image.card2 {
+  /* background: url("img2.jpg"); */
+  background-size: cover;
+}
+
+.card-text.card2 .date {
+  color: rgb(255, 77, 7);
+}
+
+.card-stats.card2 .border {
+  border-left: 1px solid rgb(185, 67, 20);
+  border-right: 1px solid rgb(185, 67, 20);
+}
+
+.card-stats.card2 {
+  background: rgb(255, 77, 7);
+}
+
+/*card3*/
+.card-image.card3 {
+  /* background: url("img3.jpg"); */
+  background-size: cover;
+}
+
+.card-text.card3 .date {
+  color: rgb(0, 189, 63);
+}
+
+.card-stats.card3 .border {
+  border-left: 1px solid rgb(14, 122, 50);
+  border-right: 1px solid rgb(14, 122, 50);
+}
+
+.card-stats.card3 {
+  background: rgb(0, 189, 63);
 }
