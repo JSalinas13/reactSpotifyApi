@@ -108,7 +108,7 @@ function App() {
         {
           token ?
             <form onSubmit={buscarArtista}>
-              <p>Consulta a tu artista</p>
+              <p>! Consulta a tu artista !</p>
               <input className="box-text" type='text' onChange={e => setSearchKey(e.target.value)} />
               <button className="boton" type={"submit"} >Buscar</button>
             </form>

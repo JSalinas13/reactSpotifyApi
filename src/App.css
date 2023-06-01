@@ -41,7 +41,7 @@
 :root {
   --main-color: #65d832;
   --second-color: #5a1a52;
-  /* --target-color: rgb(255, 7, 110); */
+  --third-color: #6d1766;
   --target-color: #5a1a52;
 }
 
@@ -66,6 +66,7 @@ h1 {
 
 p {
   color: var(--second-color);
+  text-align: center;
 }
 
 .boton--primario {
@@ -90,6 +91,7 @@ p {
 
 .boton:hover {
   cursor: pointer;
+  background: var(--third-color);
 }
 
 .box-text {
