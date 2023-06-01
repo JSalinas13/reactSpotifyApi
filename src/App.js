@@ -103,13 +103,14 @@ function App() {
       <header className="App-header">
         <h1>Spotify API con React</h1>
         {!token ?
-          <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Iniciar sesión</a>
-          : <button onClick={salir}>Cerrar sesión</button>}
+          <a className="boton" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Iniciar sesión</a>
+          : <button className="boton" onClick={salir}>Cerrar sesión</button>}
         {
           token ?
             <form onSubmit={buscarArtista}>
-              <input type='text' onChange={e => setSearchKey(e.target.value)} />
-              <button type={"submit"} >Buscar</button>
+              <p>Consulta a tu artista</p>
+              <input className="box-text" type='text' onChange={e => setSearchKey(e.target.value)} />
+              <button className="boton" type={"submit"} >Buscar</button>
             </form>
             : <h2>Por favor Iniciar sesión</h2>
         }
