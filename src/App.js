@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
   const RESPONSE_TYPE = "token"
 
   const [token, setToken] = useState("")
+  const [searchKey, setSearchKey] = useState("")
+  const [artists, setArtists] = useState([])
 
 
   useEffect(() => {
@@ -21,8 +24,10 @@ function App() {
 
       window.location.hash = ""
       window.localStorage.setItem("token", token)
-      setToken(token)
+
     }
+
+    setToken(token)
 
   }, [])
 
@@ -32,6 +37,30 @@ function App() {
     window.localStorage.removeItem("token")
   }
 
+  const buscarArtista = async (e) => {
+    e.preventDefault()
+    const { data } = await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      params: {
+        q: searchKey,
+        type: "artist"
+      }
+    })
+
+    setArtists(data.artists.items)
+  }
+
+  const renderArtist = () => {
+    return artists.map(artist => (
+      <div key={artist.id}>
+        {artist.images.length ? <img width={"100px"} height={"100px"} src={artist.images[0].url} alt=''></img> : <div>No hay imagen</div>}
+        {artist.name}
+      </div>
+    ))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,7 +68,21 @@ function App() {
         {!token ?
           <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Iniciar sesión</a>
           : <button onClick={salir}>Cerrar sesión</button>}
+        {
+          token ?
+            <form onSubmit={buscarArtista}>
+              <input type='text' onChange={e => setSearchKey(e.target.value)} />
+              <button type={"submit"} >Buscar</button>
+            </form>
+            : <h2>Por favor Iniciar sesión</h2>
+        }
+
+        {renderArtist()}
+
       </header>
+
+
+
     </div >
   );
 }
