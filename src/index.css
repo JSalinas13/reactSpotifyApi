@@ -52,7 +52,7 @@ code {
 }
 
 .card-text .date {
-  color: rgb(255, 7, 110);
+  color: var(--Main-color);
   font-size: 13px;
 }
 
@@ -74,7 +74,7 @@ code {
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
+  background: var(--Main-color);
 }
 
 .card-stats .stat {

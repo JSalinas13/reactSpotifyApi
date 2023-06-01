@@ -38,6 +38,13 @@
   }
 } */
 
+:root {
+  --main-color: #19f442;
+  --second-color: #443b65;
+  /* --target-color: rgb(255, 7, 110); */
+  --target-color: #443b65;
+}
+
 /* TARJETAS */
 
 body {
@@ -46,6 +53,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--main-color);
   /* background: url("background.jpg"); */
   /* overflow: hidden; */
   /* padding: 30px; */
@@ -84,7 +92,7 @@ body {
 }
 
 .card-text .date {
-  color: rgb(255, 7, 110);
+  color: var(--target-color);
   font-size: 13px;
 }
 
@@ -106,7 +114,7 @@ body {
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
+  background: var(--target-color);
 }
 
 .card-stats .stat {
@@ -119,8 +127,8 @@ body {
 }
 
 .card-stats .border {
-  border-left: 1px solid rgb(172, 26, 87);
-  border-right: 1px solid rgb(172, 26, 87);
+  border-left: 2px solid var(--main-color);
+  border-right: 2px solid var(--main-color);
 }
 
 .card-stats .value {
