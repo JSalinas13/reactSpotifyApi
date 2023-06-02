@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function App() {
 
-  // const CLIENT_ID = process.env.REACT_APP_CLIENT_ID_JESUS//Jesus
+
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID_FRANCO;//Franco
   const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
   const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT
