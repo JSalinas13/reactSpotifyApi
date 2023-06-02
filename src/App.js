@@ -5,15 +5,11 @@ import axios from 'axios';
 
 function App() {
 
-  // const CLIENT_ID = "cd68fb72c48e4f60bd41cf8c250bfae6";//Jesus
-  const CLIENT_ID = "ea6c21f4b4bb479fa219ff89a6fa923f";//Franco
-
-
-  
-
-  const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  const RESPONSE_TYPE = "token"
+  // const CLIENT_ID = process.env.REACT_APP_CLIENT_ID_JESUS//Jesus
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID_FRANCO;//Franco
+  const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
+  const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT
+  const RESPONSE_TYPE = process.env.REACT_APP_RESPONSE_TYPE
 
   const [token, setToken] = useState("")
   const [searchKey, setSearchKey] = useState("")
